@@ -57,6 +57,7 @@
         </nav>
       </div>
     </header>
+
     <div class="mdl-layout__drawer">
       <span class="mdl-layout__title"><a href="{{ SITEURL }}/">{{ SITENAME }}</a></span>
       <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
@@ -73,20 +74,25 @@
         {% endif %}
       </nav>
     </div>
+
     <main class="mdl-layout__content">
       {% block content %}
       {% endblock %}
     </main>
+    
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer--left-section">
+      </div>
+      <div class="mdl-mini-footer--middle-section">
+        powered by <a href="http://getpelican.com/">Pelican</a>,
+        based on <a href="http://python.org">Python</a>.
+      </div>
+      <div class="mdl-mini-footer--right-section">
+      </div>
+    </footer>
+
   </div>
-
-
   
-  <footer class="footer">
-    <address>
-      powered by <a href="http://getpelican.com/">Pelican</a>,
-      based on <a href="http://python.org">Python</a>.
-    </address><!-- /#about -->
-  </footer><!-- /#contentinfo -->
   <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/material.min.js"></script>
 </body>
 </html>
