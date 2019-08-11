@@ -30,7 +30,7 @@
     {% if TAG_FEED_RSS and tag %}
     <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
     {% endif %}
-    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/material.blue_grey-light_green.min.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/material.grey-green.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
   {% endblock head %}
@@ -38,27 +38,32 @@
 
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
+    <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
       <div class="mdl-layout__header-row">
         <span class="mdl-layout__title"><a href="{{ SITEURL }}/">{{ SITENAME }}</a></span>
-        <div class="mdl-layout-spacer"></div>
+      </div>
+      <div class="mdl-layout__header-row portfolio-navigation-row">
         <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+          <a {% if output_file == "index.html" %} class="mdl-navigation__link is-active" {% else %} class="mdl-navigation__link" {% endif %} href="/index.html">首页</a>
+
+          {% if DISPLAY_CATEGORIES_ON_MENU %}
+          <a class="mdl-navigation__link" href="javascript:;" id="cat-menu">文章分类</a>
+          {% endif %}
+
           {% if DISPLAY_PAGES_ON_MENU %}
             {% for p in pages %}
-              <a class="mdl-navigation__link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+              <a {% if p == page %} class="mdl-navigation__link is-active" {% else %} class="mdl-navigation__link" {% endif %} href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
             {% endfor %}
           {% endif %}
 
-          {% if DISPLAY_CATEGORIES_ON_MENU %}
-            {% for cat, null in categories %}
-              <a class="mdl-navigation__link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
-            {% endfor %}
-          {% endif %}
+          
+            
+          
         </nav>
       </div>
     </header>
 
-    <div class="mdl-layout__drawer">
+    <div class="mdl-layout__drawer mdl-layout--small-screen-only">
       <span class="mdl-layout__title"><a href="{{ SITEURL }}/">{{ SITENAME }}</a></span>
       <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
         {% if DISPLAY_PAGES_ON_MENU %}
@@ -74,6 +79,12 @@
         {% endif %}
       </nav>
     </div>
+
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect el-menu" style="min-width: 200px;" for="cat-menu">
+        {% for cat, null in categories %}
+        <li class="mdl-menu__item el-menu-li"><a class="el-menu-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+      {% endfor %}
+    </ul>
 
     <main class="mdl-layout__content">
       {% block content %}
