@@ -1,0 +1,18 @@
+
+<h2><a href="{{ SITEURL }}/{{ article.url }}" title="点击阅读全文">{{ article.title }}</a></h2>
+<div id="post_info">
+    作者：{{ article.author }}
+    日期：{{ article.locale_date }}
+    分类：{{ article.category }}
+    标签：
+    {% for tag in article.tags %}
+        <a href="{{SITEURL}}/{{tag.url}}">{{tag}}</a>
+    {% endfor %}
+</div>
+
+{% if article.summary %}
+    {{ article.summary|truncate(150) }}
+{% endif %}
+
+<a href="{{SITEURL}}/{{article.url}}">阅读原文</a> <!--button-->
+
