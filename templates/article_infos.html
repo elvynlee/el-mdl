@@ -1,0 +1,21 @@
+
+    <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-color-text--grey-50 el-title-bg">
+            <h3 class="quote"><a href="{{ SITEURL }}/{{ article.url }}" title="点击阅读 {{ article.title|striptags }}">{{ article.title }}</a></h3>
+        </div>
+        <div class="mdl-card__supporting-text mdl-card--border mdl-color-text--grey-600">
+            {{ article.summary|truncate(150) }}
+        </div>
+        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+            <div><a href="{{SITEURL}}/{{article.url}}">阅读原文</a></div>
+            <div>
+                日期：{{ article.locale_date }}
+                分类：{{ article.category }}
+                标签：
+                {% for tag in article.tags %}
+                    <a href="{{SITEURL}}/{{tag.url}}">{{tag}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
