@@ -88,20 +88,24 @@
       {% endfor %}
     </ul>
 
-    <main class="mdl-layout__content">
+    <main class="mdl-layout__content" style="display: flex;flex-direction: column;">
+      <div style="flex:1">
       {% block content %}
       {% endblock %}
+      </div>
 
-      <footer class="el-footer mdl-mini-footer">
-          <div class="mdl-mini-footer--left-section">
-          </div>
-          <div class="mdl-mini-footer--middle-section">
-            powered by <a href="http://getpelican.com/">Pelican</a>,
-            based on <a href="http://python.org">Python</a>.
-          </div>
-          <div class="mdl-mini-footer--right-section">
-          </div>
-      </footer>
+      <div class="page-footer">
+        <footer class="el-footer mdl-mini-footer">
+            <div class="mdl-mini-footer--left-section">
+            </div>
+            <div class="mdl-mini-footer--middle-section">
+              powered by <a href="http://getpelican.com/">Pelican</a>,
+              based on <a href="http://python.org">Python</a>.
+            </div>
+            <div class="mdl-mini-footer--right-section">
+            </div>
+        </footer>
+      </div>
 
     </main>
 
