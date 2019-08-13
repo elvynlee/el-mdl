@@ -30,7 +30,8 @@
     {% if TAG_FEED_RSS and tag %}
     <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
     {% endif %}
-    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/material.grey-green.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/material.grey-deep_orange.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
   {% endblock head %}
@@ -47,6 +48,7 @@
       </div>
       <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
         <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+
           <a {% if output_file == "index.html" %} class="mdl-navigation__link is-active" {% else %} class="mdl-navigation__link" {% endif %} href="/index.html">首页</a>
 
           {% if DISPLAY_CATEGORIES_ON_MENU %}
@@ -59,9 +61,6 @@
             {% endfor %}
           {% endif %}
 
-          
-            
-          
         </nav>
       </div>
     </header>
@@ -92,18 +91,19 @@
     <main class="mdl-layout__content">
       {% block content %}
       {% endblock %}
+
+      <footer class="el-footer mdl-mini-footer">
+          <div class="mdl-mini-footer--left-section">
+          </div>
+          <div class="mdl-mini-footer--middle-section">
+            powered by <a href="http://getpelican.com/">Pelican</a>,
+            based on <a href="http://python.org">Python</a>.
+          </div>
+          <div class="mdl-mini-footer--right-section">
+          </div>
+      </footer>
+
     </main>
-    
-    <footer class="mdl-mini-footer">
-      <div class="mdl-mini-footer--left-section">
-      </div>
-      <div class="mdl-mini-footer--middle-section">
-        powered by <a href="http://getpelican.com/">Pelican</a>,
-        based on <a href="http://python.org">Python</a>.
-      </div>
-      <div class="mdl-mini-footer--right-section">
-      </div>
-    </footer>
 
   </div>
   

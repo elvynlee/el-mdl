@@ -1,13 +1,16 @@
+<div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp">
 
-    <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp">
-        <div class="mdl-card__title mdl-color-text--grey-50 el-title-bg">
-            <h3 class="quote"><a href="{{ SITEURL }}/{{ article.url }}" title="点击阅读 {{ article.title|striptags }}">{{ article.title }}</a></h3>
-        </div>
-        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-            {{ article.summary|truncate(150) }}
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ SITEURL }}/{{ article.url }}">阅读全文</a>
-        </div>
+    <div class="mdl-card__title mdl-color-text--grey-50 el-title-bg">
+        <h3 class="quote"><a href="{{ SITEURL }}/{{ article.url }}" title="点击阅读 {{ article.title|striptags }}">{{ article.title }}</a></h3>
     </div>
+
+    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+        {{ article.summary|truncate(100) }}
+    </div>
+
+    <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ SITEURL }}/{{ article.url }}">阅读全文</a>
+    </div>
+    
+</div>
 

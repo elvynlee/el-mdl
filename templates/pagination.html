@@ -1,13 +1,32 @@
 {% if DEFAULT_PAGINATION %}
-
+<nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     {% if articles_page.has_previous() %}
-        <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">&laquo;上一页</a>
+    <a href="{{ SITEURL }}/{{ articles_previous_page.url }}" class="demo-nav__button">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-900">
+            <i class="material-icons">arrow_back</i>上一页
+        </button>
+    </a>
+    {% else %}
+    <button class="mdl-button mdl-js-button" disabled>
+        <i class="material-icons">arrow_back</i>上一页
+    </button>
     {% endif %}
     
-    Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}
+    <button class="mdl-button mdl-js-button" disabled>
+        页码： {{ articles_page.number }} / {{ articles_paginator.num_pages }}
+    </button>
 
     {% if articles_page.has_next() %}
-        <a href="{{ SITEURL }}/{{ articles_next_page.url }}">下一页&raquo;</a>
+    <a href="{{ SITEURL }}/{{ articles_next_page.url }}" class="demo-nav__button">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-900">
+            下一页<i class="material-icons">arrow_forward</i>
+        </button>
+    </a>
+    {% else %}
+    <button class="mdl-button mdl-js-button" disabled>
+        下一页<i class="material-icons">arrow_forward</i>
+    </button>
     {% endif %}
-
+</nav>
 {% endif %}
+    
