@@ -27,7 +27,7 @@
                         {% for article in dates %}
                         <tr>
                             <td class="mdl-data-table__cell--non-numeric">{{ article.locale_date }}</td>
-                            <td class="mdl-data-table__cell--non-numeric"><a href="{{ SITEURL }}/{{ article.url }}" style="text-decoration: none;">{{ article.title }}</td>
+                            <td class="mdl-data-table__cell--non-numeric"><a href="{{ SITEURL }}/{{ article.url }}" style="text-decoration: none;">{{ article.title }}</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
