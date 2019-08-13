@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }} - Tag列表{% endblock %}
+
+{% block content %}
+    <div class="mdl-grid portfolio-max-width">
+        <div class="demo-blog mdl-cell mdl-cell--12-col mdl-card">
+    
+            <div class="mdl-card__media mdl-color-text--grey-50 el-crad">
+            </div>
+    
+            <div class="mdl-color-text--grey-700 el mdl-card__supporting-text mdl-card--border">
+                <div>
+                    <h4>{{ SITENAME }}Tag列表：</h4>
+                </div>
+            </div>
+    
+            <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+                <table class="mdl-data-table mdl-js-data-table">
+                    <thead>
+                        <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Tags标签</th>
+                        <th>相关文章数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for tag, articles in tags|sort %}
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric"><a href="{{ SITEURL }}/{{ articles.url }}" style="text-decoration: none;">{{ tag }}</a></td>
+                            <td>{{ articles|count }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    
+        </div>
+    </div>
+
+{% endblock %}
