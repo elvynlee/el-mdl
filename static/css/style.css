@@ -274,3 +274,8 @@ img.article-image {
   cursor: pointer;
 }
 
+.el-table .mdl-data-table {
+  border: 0px;
+  font-size: 15px;
+  width: 100%;
+}

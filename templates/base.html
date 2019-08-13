@@ -54,6 +54,8 @@
           <a class="mdl-navigation__link" href="javascript:;" id="cat-menu">文章分类</a>
           {% endif %}
 
+          <a {% if output_file == "archives.html" %} class="mdl-navigation__link is-active" {% else %} class="mdl-navigation__link" {% endif %} href="/archives.html">存档文章</a>
+
           {% if DISPLAY_PAGES_ON_MENU %}
             {% for p in pages %}
               <a {% if p == page %} class="mdl-navigation__link is-active" {% else %} class="mdl-navigation__link" {% endif %} href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
@@ -81,7 +83,7 @@
       </nav>
     </div>
 
-    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect el-menu" style="min-width: {{ 900 // (pages|length() + 2) }}px;" for="cat-menu">
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect el-menu" style="min-width: {{ 900 // (pages|length() + 3) }}px;" for="cat-menu">
         {% for cat, null in categories %}
         <li class="mdl-menu__item el-menu-li"><a class="el-menu-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
       {% endfor %}
