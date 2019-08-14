@@ -39,6 +39,7 @@
 
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    
     <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
       <div class="mdl-layout__header-row portfolio-logo-row">
         <span class="mdl-layout__title">
@@ -91,6 +92,7 @@
     </ul>
 
     <main class="mdl-layout__content" style="display: flex;flex-direction: column;">
+      <a name="top"></a>
       <div style="flex:1">
       {% block content %}
       {% endblock %}
@@ -99,12 +101,17 @@
       <div class="page-footer">
         <footer class="el-footer mdl-mini-footer">
             <div class="mdl-mini-footer--left-section">
+              <div>powered by <a href="http://getpelican.com/" style="text-decoration: none;">Pelican</a>,
+                based on <a href="http://python.org" style="text-decoration: none;">Python</a>.</div>
             </div>
             <div class="mdl-mini-footer--middle-section">
             </div>
             <div class="mdl-mini-footer--right-section">
-                <div>powered by <a href="http://getpelican.com/" style="text-decoration: none;">Pelican</a>,
-                based on <a href="http://python.org" style="text-decoration: none;">Python</a>.</div>
+              <a href="#top">
+                <button class="mdl-button mdl-js-button mdl-button--accent">
+                    返回顶部<i class="material-icons">expand_less</i>
+                </button>
+              </a>
             </div>
         </footer>
       </div>
