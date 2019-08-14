@@ -212,7 +212,7 @@ img.article-image {
           flex-grow: 1;
 }
 
-.el.mdl-card__supporting-text {
+.elst.mdl-card__supporting-text {
   width: 100%;
   padding: 16px;
   min-height: 64px;
@@ -251,9 +251,6 @@ img.article-image {
 }
 
 
-.el-crad {
-  min-height: 200px;
-}
 
 .demo-blog .mdl-card__media {
   box-sizing: border-box;
@@ -272,6 +269,7 @@ img.article-image {
       -ms-flex-align: end;
           align-items: flex-end;
   cursor: pointer;
+  min-height: 280px;
 }
 
 .el-table .mdl-data-table {

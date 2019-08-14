@@ -24,11 +24,11 @@
 <div class="mdl-grid portfolio-max-width">
     <div class="demo-blog mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
 
-        <div class="mdl-card__media mdl-color-text--grey-50 el-crad">
+        <div class="mdl-card__media mdl-color-text--grey-50" style="{% if article.color %}background-color: {{article.color}};{% endif %} {% if article.image %}background-image: url({{article.image}});{% endif %}">
             <h4>{{ article.title }}</h4>
         </div>
 
-        <div class="mdl-color-text--grey-700 el mdl-card__supporting-text">
+        <div class="mdl-color-text--grey-700 elst mdl-card__supporting-text">
             <div>
               <strong>发布日期：{{ article.locale_date }}</strong>
               {% if article.modified %}<span>更新日期：{{ article.locale_modified }}</span>{% endif %}
