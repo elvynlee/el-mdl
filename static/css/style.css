@@ -326,3 +326,11 @@ img.article-image {
          url('../fonts/fontello.ttf?34980391') format('truetype'),
          url('../fonts/fontello.svg?34980391#fontello') format('svg');
   }
+
+.el-tag-btn .mdl-button {
+  height: 24px;
+  min-width: 48px;
+  padding: 0 0px;
+  text-transform: none;
+  line-height: 1em;
+}
