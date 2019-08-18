@@ -244,8 +244,6 @@ img.article-image {
 
 
 .el-footer {
-  margin-top: 80px;
-  padding: 40px;
   box-sizing: border-box;
   align-items: center;
 }
@@ -277,3 +275,54 @@ img.article-image {
   font-size: 15px;
   width: 100%;
 }
+
+.el-footer ul {
+  padding: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.el-footer li {
+  position: relative;
+  padding: 0;
+  margin: 0 16px;
+}
+
+.el-social-btn{
+  display: block;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.ello-icon a {
+  color: #ccc;
+  text-decoration: none;
+}
+.ello-icon a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.ello-icon {
+    font-family: "fontello";
+    font-style: normal;
+    font-size: 32px;
+    color: #eee;
+    display: inline-block;
+}
+
+@font-face {
+    font-family: 'fontello';
+    src: url('../fonts/fontello.eot?34980391');
+    src: url('../fonts/fontello.eot?34980391#iefix') format('embedded-opentype'),
+         url('../fonts/fontello.woff?34980391') format('woff'),
+         url('../fonts/fontello.ttf?34980391') format('truetype'),
+         url('../fonts/fontello.svg?34980391#fontello') format('svg');
+  }

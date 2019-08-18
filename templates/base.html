@@ -105,6 +105,14 @@
                 based on <a href="http://python.org" style="text-decoration: none;">Python</a>.</div>
             </div>
             <div class="mdl-mini-footer--middle-section">
+              <ul>
+                {% if TWITTER_URL %} <li class="el-social-btn"><i class="ello-icon"><a href="{{ TWITTER_URL }}" title="twitter">&#xf099;</a></i></li> {% endif %}
+                {% if FACEBOOK_URL %} <li class="el-social-btn"><i class="ello-icon"><a href="{{ FACEBOOK_URL }}" title="facebook">&#xf230;</a></i></li> {% endif %}
+                {% if GITHUB_URL %} <li class="el-social-btn"><i class="ello-icon"><a href="{{ GITHUB_URL }}" title="github">&#xf09b;</a></i></li> {% endif %}
+                {% if WEIBO_URL %} <li class="el-social-btn"><i class="ello-icon"><a href="{{ WEIBO_URL }}" title="weibo">&#xf18a;</a></i></li> {% endif %}
+                {% if WECHAT_URL %} <li class="el-social-btn"><i class="ello-icon"><a href="{{ WECHAT_URL }}" title="wechat">&#xf1d7;</a></i></li> {% endif %}
+                {% if LINKEDIN_URL %} <li class="el-social-btn"><i class="ello-icon"><a href="{{ LINKEDIN_URL }}" title="linkedin">&#xf30c;</a></i></li> {% endif %}
+              </ul>
             </div>
             <div class="mdl-mini-footer--right-section">
               <a href="#top">
