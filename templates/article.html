@@ -66,7 +66,21 @@
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
             {{ article.content }}
         </div>
+        
 
+    </div>
+    <div class="mdl-card__supporting-text">
+        {% if article.prev_article %}
+        <a style="float:left;" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ SITEURL }}/{{ article.prev_article.url}}" title="{{ article.prev_article.title }}">
+          <i class="material-icons">arrow_back</i>{{ article.prev_article.title|truncate(40) }}
+        </a>
+        {% endif %}
+        
+        {% if article.next_article %}
+        <a style="float: right;" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ SITEURL }}/{{ article.next_article.url}}" title="{{ article.next_article.title }}">
+          {{ article.next_article.title|truncate(40) }}...<i class="material-icons">arrow_forward</i>
+        </a>
+        {% endif %}
     </div>
 </div>
 
