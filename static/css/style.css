@@ -224,7 +224,7 @@ img.article-image {
           align-items: center;
 }
 
-.demo-nav {
+.el-nav {
   margin: 12px 15px;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -333,4 +333,24 @@ img.article-image {
   padding: 0 0px;
   text-transform: none;
   line-height: 1em;
+}
+
+.el-nav .pagination_container {
+  display: block;
+  text-align: center;
+}
+
+.el-nav .pagination_link {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0 10px;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.el-nav .p_link_active {
+  border-bottom: solid 2px #333333;
+  color: #333333;
+  font-weight: 400;
+  padding-bottom: 10px;
 }

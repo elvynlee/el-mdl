@@ -1,5 +1,5 @@
 {% if DEFAULT_PAGINATION %}
-<nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+<nav class="el-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     {% if articles_page.has_previous() %}
     <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-900">
@@ -11,10 +11,54 @@
         <i class="material-icons">chevron_left</i>上一页
     </button>
     {% endif %}
+
     
-    <button class="mdl-button mdl-js-button" disabled>
-        页码： {{ articles_page.number }} / {{ articles_paginator.num_pages }}
-    </button>
+    <div class="pagination_container">
+
+        {% if articles_paginator.num_pages <= 7 %}
+            {% for page_i in range(1, articles_paginator.num_pages+1) %}
+                {% if page_i == articles_page.number %}
+                <span class="pagination_link p_link_active">{{ page_i }}</span>
+                {% else %}
+                <a href="{{ SITEURL }}/{{ articles_paginator.page(page_i).url }}" class="pagination_link">{{ page_i }}</a>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% if articles_page.number <= 4 %}
+                {% for page_i in range(1, 7) %}
+                    {% if page_i == articles_page.number %}
+                    <span class="pagination_link p_link_active">{{ page_i }}</span>
+                    {% else %}
+                    <a href="{{ SITEURL }}/{{ articles_paginator.page(page_i).url }}" class="pagination_link">{{ page_i }}</a>
+                    {% endif %}
+                {% endfor %}
+                <span class="pagination_link">...</span><a href="{{ SITEURL }}/{{ articles_paginator.page(articles_paginator.num_pages).url }}">{{ articles_paginator.num_pages }}</a>
+            {% else %}
+                {% if articles_page.number + 3 < articles_paginator.num_pages %}
+                    <a href="{{ articles_paginator.url }}" class="">1</a><span class="pagination_link">...</span>
+                    {% for page_i in range(articles_page.number-2, articles_page.number+3) %}
+                        {% if page_i == articles_page.number %}
+                        <span class="pagination_link p_link_active">{{ page_i }}</span>
+                        {% else %}
+                        <a href="{{ SITEURL }}/{{ articles_paginator.page(page_i).url }}" class="pagination_link">{{ page_i }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    <span class="pagination_link">...</span><a href="{{ SITEURL }}/{{ articles_paginator.page(articles_paginator.num_pages).url }}">{{ articles_paginator.num_pages }}</a>
+                {% else %}
+                    <a href="{{ articles_paginator.url }}" class="">1</a><span class="pagination_link">...</span>
+                    {% for page_i in range(articles_paginator.num_pages-4, articles_paginator.num_pages+1) %}
+                        {% if page_i == articles_page.number %}
+                        <span class="pagination_link p_link_active">{{ page_i }}</span>
+                        {% else %}
+                        <a href="{{ SITEURL }}/{{ articles_paginator.page(page_i).url }}" class="pagination_link">{{ page_i }}</a>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+        
+    </div>
+
 
     {% if articles_page.has_next() %}
     <a href="{{ SITEURL }}/{{ articles_next_page.url }}">
@@ -29,4 +73,3 @@
     {% endif %}
 </nav>
 {% endif %}
-    
