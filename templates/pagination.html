@@ -3,12 +3,12 @@
     {% if articles_page.has_previous() %}
     <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-900">
-            <i class="material-icons">arrow_back</i>上一页
+            <i class="material-icons">chevron_left</i>上一页
         </button>
     </a>
     {% else %}
     <button class="mdl-button mdl-js-button" disabled>
-        <i class="material-icons">arrow_back</i>上一页
+        <i class="material-icons">chevron_left</i>上一页
     </button>
     {% endif %}
     
@@ -19,12 +19,12 @@
     {% if articles_page.has_next() %}
     <a href="{{ SITEURL }}/{{ articles_next_page.url }}">
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-900">
-            下一页<i class="material-icons">arrow_forward</i>
+            下一页<i class="material-icons">chevron_right</i>
         </button>
     </a>
     {% else %}
     <button class="mdl-button mdl-js-button" disabled>
-        下一页<i class="material-icons">arrow_forward</i>
+        下一页<i class="material-icons">chevron_right</i>
     </button>
     {% endif %}
 </nav>
