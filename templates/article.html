@@ -22,6 +22,24 @@
 
 {% block content %}
 <div class="mdl-grid portfolio-max-width">
+    <div class="el-article-path">
+      <button class="mdl-button mdl-js-button mdl-button--accent">
+        <a style="text-decoration: none;" href="{{ SITEURL }}">首页</a>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-button--accent" disabled>
+        / 
+      </button>
+      {% if article.category %}
+      <button class="mdl-button mdl-js-button mdl-button--accent">
+        <a style="text-decoration: none;" href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+      </button>
+      
+      {% endif %}
+      <button class="mdl-button mdl-js-button mdl-button--accent" disabled>
+        / {{ article.title }}
+      </button>
+    </div>
+
     <div class="demo-blog mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
 
         <div class="mdl-card__media mdl-color-text--grey-50" style="{% if article.color %}background-color: {{article.color}};{% endif %} {% if article.image %}background-image: url({{article.image}});{% endif %}">
