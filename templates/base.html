@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/material.grey-deep_orange.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
+    {% block extra_css %}
+    {% endblock %}
   {% endblock head %}
 </head>
 
@@ -65,6 +67,17 @@
           {% endif %}
 
         </nav>
+        
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+            <i class="material-icons">search</i>
+          </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" id="search">
+            <label class="mdl-textfield__label" for="search">Enter your query...</label>
+          </div>
+        </div>
+
       </div>
     </header>
 
@@ -86,8 +99,8 @@
     </div>
 
     <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect el-menu" style="min-width: {{ 900 // (pages|length() + 4) }}px;" for="cat-menu">
-        {% for cat, null in categories %}
-        <li class="mdl-menu__item el-menu-li"><a class="el-menu-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+      {% for cat, null in categories %}
+      <li class="mdl-menu__item el-menu-li"><a class="el-menu-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
       {% endfor %}
     </ul>
 
@@ -130,5 +143,7 @@
   </div>
   
   <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/material.min.js"></script>
+  {% block extra_js %}
+  {% endblock %}
 </body>
 </html>
