@@ -24,14 +24,14 @@
 <div class="mdl-grid portfolio-max-width">
     <div class="el-article-path">
       <button class="mdl-button mdl-js-button mdl-button--accent">
-        <a style="text-decoration: none;" href="{{ SITEURL }}">首页</a>
+        <a style="text-decoration: none;" href="{{ SITEURL }}" title="首页"><i class="material-icons">home</i></a>
       </button>
       <button class="mdl-button mdl-js-button mdl-button--accent" disabled>
         / 
       </button>
       {% if article.category %}
       <button class="mdl-button mdl-js-button mdl-button--accent">
-        <a style="text-decoration: none;" href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+        <a style="text-decoration: none;" href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category }}分类页">{{ article.category }}</a>
       </button>
       
       {% endif %}
@@ -49,13 +49,13 @@
         <div class="mdl-color-text--grey-700 elst mdl-card__supporting-text">
             <div>
                 {% if article.modified %}
-                <button class="mdl-button mdl-js-button" disabled style="line-height: 1em">
+                <button class="mdl-button mdl-js-button" disabled style="min-width: 90;line-height: 1em">
                     <div style="font-size: 0.5em">发布：{{ article.locale_date }}</div>
                     <div style="font-size: 0.5em">更改：{{ article.locale_modified }}</div>
                 </button>
                 {% else %}
-                <button class="mdl-button mdl-js-button" disabled>
-                    <div>发布：{{ article.locale_date }}</div>
+                <button class="mdl-button mdl-js-button" disabled style="min-width: 90;">
+                  <div>发布：{{ article.locale_date }}</div>
                 </button>
                 {% endif %}
             </div>
@@ -63,7 +63,7 @@
             <div>
                 {% if article.category %}
                 <button class="mdl-button mdl-js-button mdl-button--accent">
-                  <a style="text-decoration: none;" href="{{ SITEURL }}/{{ article.category.url }}">分类：{{ article.category }}</a>
+                  <a style="text-decoration: none;" href="{{ SITEURL }}/{{ article.category.url }}"><i class="material-icons">notes</i>分类：{{ article.category }}</a>
                 </button>
                 {% endif %}
             </div>
@@ -71,7 +71,7 @@
             <div class="section-spacer"></div>
 
             {% if article.tags %}
-            <div class="el-tag-btn">Tags:
+            <div class="el-tag-btn"><i class="material-icons" style="font-size: 1.5em;vertical-align: middle;">local_offer</i>
                 {% for tag in article.tags %}
                 <button class="mdl-button mdl-js-button mdl-button--accent">
                   <a style="text-decoration: none;" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
