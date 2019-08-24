@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="mdl-grid portfolio-max-width">
-        <div class="demo-blog mdl-cell mdl-cell--12-col mdl-card">
+        <div class="el-blog mdl-cell mdl-cell--12-col mdl-card">
     
             <div class="mdl-card__media mdl-color-text--grey-50 el-crad">
             </div>
@@ -26,7 +26,7 @@
                     <tbody>
                         {% for tag, articles in tags|sort %}
                         <tr>
-                            <td class="mdl-data-table__cell--non-numeric"><a href="{{ SITEURL }}/{{ articles.url }}" style="text-decoration: none;">{{ tag }}</a></td>
+                            <td class="mdl-data-table__cell--non-numeric"><a href="{{ SITEURL }}/{{ tag.url }}" style="text-decoration: none;">{{ tag }}</a></td>
                             <td>{{ articles|count }}</td>
                         </tr>
                         {% endfor %}

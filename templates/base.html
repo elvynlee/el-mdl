@@ -67,16 +67,20 @@
           {% endif %}
 
         </nav>
-        
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-          <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-            <i class="material-icons">search</i>
-          </label>
-          <div class="mdl-textfield__expandable-holder">
-            <input class="mdl-textfield__input" type="text" id="search">
-            <label class="mdl-textfield__label" for="search">Enter your query...</label>
+
+        {% if TIPUE_SEARCH %}
+        <form class="" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> 
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="tipue_search_input">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" name="q" id="tipue_search_input">
+              <label class="mdl-textfield__label" for="tipue_search_input">Enter your query...</label>
+            </div>
           </div>
-        </div>
+        </form>
+        {% endif %}
 
       </div>
     </header>
@@ -141,8 +145,15 @@
     </main>
 
   </div>
-  
+  {% block script %}
   <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/material.min.js"></script>
+  <script>
+    function validateForm(query)
+    {
+        return (query.length > 0);
+    }
+  </script>
+  {% endblock script %}
   {% block extra_js %}
   {% endblock %}
 </body>

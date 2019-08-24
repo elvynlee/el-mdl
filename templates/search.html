@@ -1,43 +1,38 @@
 {% extends "base.html" %}
 
 {% block title %}
-  Seach {{ super() }}
+查找 {{ super() }}
 {% endblock title %}
 
-{% block head_description %}
-Search results for {{ SITENAME|striptags|e }} blog.
-{% endblock head_description %}
-
 {% block extra_css %}
-  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.css"/>
-{% endblock %}
-
-{% block extra_js %}
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch_content.js"></script>
-  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch_set.js"></script>
-  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.min.js"></script>
-
-  <script>
-    $(document).ready(function() {
-      $('#tipue_search_input').tipuesearch({
-          'mode' : 'json',
-          'show': 10,
-          'newWindow': false,
-          'contentLocation': '{{ SITEURL }}/tipuesearch_content.json'
-      });
-    });
-  </script>
-{% endblock extra_js %}
-
-{% block top_center %}
-  <h1>
-    Search Results
-  </h1>
+<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.css"/>
 {% endblock %}
 
 {% block content %}
-  <div>
+<div class="mdl-grid portfolio-max-width">
+  <div class="el-blog mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
     <div id="tipue_search_content"></div>
   </div>
+</div>
 {% endblock content %}
+
+{% block extra_js %}
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="{{ SITEURL }}/tipuesearch_content.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch_set.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        'minimumLength': 1,
+        'show': 15,
+        'showTime': false,
+        'showURL': false,
+        'wholeWords': false,
+    });
+  });
+</script>
+
+{% endblock extra_js %}

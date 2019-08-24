@@ -103,7 +103,7 @@ img.article-image {
 }
 
 .portfolio-max-width {
-  max-width: 900px;
+  max-width: 1140px;
   margin: auto;
 }
 
@@ -133,15 +133,6 @@ img.article-image {
   top: -4px;
 }
 
-.demo-card-event > .mdl-card__actions {
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    box-sizing: border-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-}
 
 .portfolio-contact .mdl-textfield {
   width: 100%;
@@ -187,6 +178,9 @@ img.article-image {
   min-height: 76px;
 }
 
+.mdl-grid .mdl-card{
+  margin: 36px 8px;
+}
 
 .el-menu-li {
     text-align: center;
@@ -250,7 +244,7 @@ img.article-image {
 
 
 
-.demo-blog .mdl-card__media {
+.el-blog .mdl-card__media {
   box-sizing: border-box;
   background-size: cover;
   padding: 24px;
