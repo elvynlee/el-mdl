@@ -179,7 +179,7 @@ img.article-image {
 }
 
 .mdl-grid .mdl-card{
-  margin: 36px 8px;
+  margin: 8px 8px 32px 8px;
 }
 
 .el-menu-li {
@@ -360,4 +360,8 @@ img.article-image {
   text-transform: none;
   line-height: 1em;
   vertical-align: middle;
+}
+
+.el-side .mdl-card {
+  margin: 8px;
 }

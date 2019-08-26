@@ -111,8 +111,10 @@
     <main class="mdl-layout__content" style="display: flex;flex-direction: column;">
       <a name="top"></a>
       <div style="flex:1">
-      {% block content %}
-      {% endblock %}
+        <div class="mdl-grid portfolio-max-width">
+        {% block content %}
+        {% endblock %}
+        </div>
       </div>
 
       <div class="page-footer">

@@ -3,38 +3,35 @@
 {% block title %}{{ SITENAME }} - 文章存档列表页{% endblock %}
 
 {% block content %}
-    <div class="mdl-grid portfolio-max-width">
-        <div class="el-blog mdl-cell mdl-cell--12-col mdl-card">
-    
-            <div class="mdl-card__media mdl-color-text--grey-50 el-crad">
-            </div>
-    
-            <div class="mdl-color-text--grey-700 el mdl-card__supporting-text mdl-card--border">
-                <div>
-                    <h4>{{ SITENAME }}网站文章列表：</h4>
-                </div>
-            </div>
-    
-            <div class="el-table mdl-color-text--grey-700 mdl-card__supporting-text">
-                <table class="mdl-data-table mdl-js-data-table">
-                    <thead>
-                        <tr>
-                        <th class="mdl-data-table__cell--non-numeric">日期</th>
-                        <th class="mdl-data-table__cell--non-numeric">文章标题</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for article in dates %}
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">{{ article.locale_date }}</td>
-                            <td class="mdl-data-table__cell--non-numeric"><a href="{{ SITEURL }}/{{ article.url }}" style="text-decoration: none;">{{ article.title }}</a></td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-    
+<div class="el-blog mdl-cell mdl-cell--12-col mdl-card">
+
+    <div class="mdl-card__media mdl-color-text--grey-50 el-crad">
+    </div>
+
+    <div class="mdl-color-text--grey-700 el mdl-card__supporting-text mdl-card--border">
+        <div>
+            <h4>{{ SITENAME }}网站文章列表：</h4>
         </div>
     </div>
 
+    <div class="el-table mdl-color-text--grey-700 mdl-card__supporting-text">
+        <table class="mdl-data-table mdl-js-data-table">
+            <thead>
+                <tr>
+                <th class="mdl-data-table__cell--non-numeric">日期</th>
+                <th class="mdl-data-table__cell--non-numeric">文章标题</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for article in dates %}
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">{{ article.locale_date }}</td>
+                    <td class="mdl-data-table__cell--non-numeric"><a href="{{ SITEURL }}/{{ article.url }}" style="text-decoration: none;">{{ article.title }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
 {% endblock %}

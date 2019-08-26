@@ -9,22 +9,19 @@
 {% endblock %}
 
 {% block content %}
-<div class="mdl-grid portfolio-max-width">
-  <div class="el-blog mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+<div class="el-blog mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
     <div id="tipue_search_content"></div>
-  </div>
 </div>
 {% endblock content %}
 
 {% block extra_js %}
-
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="{{ SITEURL }}/tipuesearch_content.js"></script>
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch_set.js"></script>
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.min.js"></script>
 
 <script>
-  $(document).ready(function() {
+$(document).ready(function() {
     $('#tipue_search_input').tipuesearch({
         'minimumLength': 1,
         'show': 15,
@@ -32,7 +29,7 @@
         'showURL': false,
         'wholeWords': false,
     });
-  });
+});
 </script>
 
 {% endblock extra_js %}
