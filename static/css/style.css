@@ -43,7 +43,7 @@
 }
 
 .portfolio-navigation-row {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   height: 45px;
 }
@@ -362,6 +362,16 @@ img.article-image {
   vertical-align: middle;
 }
 
-.el-side .mdl-card {
-  margin: 8px;
+.el-tagcloud .mdl-card__supporting-text {
+  padding: 6px;
+}
+
+.el-sidebar {
+  overflow: visible;
+}
+.el-search {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+
 }

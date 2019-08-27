@@ -31,9 +31,10 @@
     <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
     {% endif %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/material.grey-deep_orange.min.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/material.blue_grey-red.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/tag_cloud.css">
     {% block extra_css %}
     {% endblock %}
   {% endblock head %}
@@ -68,19 +69,7 @@
 
         </nav>
 
-        {% if TIPUE_SEARCH %}
-        <form class="" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> 
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="tipue_search_input">
-              <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" name="q" id="tipue_search_input">
-              <label class="mdl-textfield__label" for="tipue_search_input">Enter your query...</label>
-            </div>
-          </div>
-        </form>
-        {% endif %}
+       
 
       </div>
     </header>
@@ -112,8 +101,46 @@
       <a name="top"></a>
       <div style="flex:1">
         <div class="mdl-grid portfolio-max-width">
-        {% block content %}
-        {% endblock %}
+          <div class="mdl-card mdl-cell mdl-cell--9-col">
+          {% block content %}
+          {% endblock %}
+          </div>
+
+          <div class="el-sidebar mdl-card mdl-cell mdl-cell--9-col mdl-cell--3-col-desktop" id="right_sidebar">
+          {% block sidebar_head %}
+          {% endblock %}
+
+          <div class="el-tagcloud mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__title mdl-card--border">
+                  <h2 class="mdl-card__title-text">标签云</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                  {% include 'tag_cloud.html' %}
+              </div>
+          </div>
+          
+          <div class="el-search mdl-card mdl-cell mdl-cell--12-col">    
+              <div class="mdl-card__title mdl-card--border">
+                  <h2 class="mdl-card__title-text">站内搜索</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                  <form class="" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> 
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                        <label class="mdl-button mdl-js-button mdl-button--icon" for="tipue_search_input">
+                          <i class="material-icons">search</i>
+                        </label>
+                        <div class="mdl-textfield__expandable-holder">
+                          <input class="mdl-textfield__input" type="text" name="q" id="tipue_search_input">
+                          <label class="mdl-textfield__label" for="tipue_search_input">Enter your query...</label>
+                        </div>
+                      </div>
+                    </form>
+              </div>
+          </div>
+
+          {% block sidebar_foot %}
+          {% endblock %}
+          </div>
         </div>
       </div>
 

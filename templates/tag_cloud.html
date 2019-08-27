@@ -1,0 +1,13 @@
+<div class="tagcloud">
+    <ul>
+        {% for tag in tag_cloud %}
+        <li>
+            <a class="tag-{{ tag.1 }}" href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a>
+            {% if TAG_CLOUD_BADGE %}
+            <span class="mdl-badge mdl-badge--overlap tag-{{ tag.1 }}" data-badge="{{ tag.2 }}"></span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
