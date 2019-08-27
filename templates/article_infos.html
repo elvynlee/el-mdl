@@ -1,16 +1,27 @@
-<div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--4dp">
+<div class="mdl-cell mdl-cell--12-col">
+<div class="rw-card rw-card--media mdl-card mdl-shadow--4dp">
 
-    <div class="mdl-card__title mdl-color-text--grey-50 mdl-card__media" style="{% if article.color %}background-color: {{article.color}};{% endif %} {% if article.image %}background-image: url({{article.image}});{% endif %}">
-        <h3 class="quote"><a href="{{ SITEURL }}/{{ article.url }}" title="点击阅读 {{ article.title|striptags }}">{{ article.title }}</a></h3>
-    </div>
+    <div class="rw-card__img-container bg-img-clickable" alt="{{ article.title }}" style="{% if article.image %}background-image: url({{ article.image }});{% elif article.color %}background-color: {{article.color}};{% endif %}"></div>
 
-    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-        {{ article.summary|truncate(100) }}
-    </div>
+    <div class="rw-card__content">
 
-    <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ SITEURL }}/{{ article.url }}">阅读全文</a>
+        <h2 class="rw-card__title">
+            <a href="{{ SITEURL }}/{{ article.url }}">
+                {{ article.title }}
+            </a>
+        </h2>
+
+        <div class="rw-card__body">
+            {{ article.summary|truncate(100) }}
+        </div>
+
+        <div class="rw-card__actions">
+            <span class="rw-card__meta"><i class="material-icons">create</i>{{ article.locale_date }}</span>
+            <a class="rw-card__end mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ SITEURL }}/{{ article.url }}">
+                阅读全文<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+
     </div>
-    
 </div>
-
+</div>

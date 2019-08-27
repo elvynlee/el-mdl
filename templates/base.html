@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/tag_cloud.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/article_card.css">
     {% block extra_css %}
     {% endblock %}
   {% endblock head %}
@@ -55,7 +56,7 @@
           <a {% if output_file == "index.html" %} class="mdl-navigation__link is-active" {% else %} class="mdl-navigation__link" {% endif %} href="/index.html">首页</a>
 
           {% if DISPLAY_CATEGORIES_ON_MENU %}
-          <a class="mdl-navigation__link" href="javascript:;" id="cat-menu">文章分类</a>
+          <a class="mdl-navigation__link" href="javascript:;" id="cat-menu">文章分类<i class="material-icons">arrow_drop_down</i></a>
           {% endif %}
 
           <a {% if output_file == "tags.html" %} class="mdl-navigation__link is-active" {% else %} class="mdl-navigation__link" {% endif %} href="/tags.html">Tag分类</a>
