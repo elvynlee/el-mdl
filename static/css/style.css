@@ -61,7 +61,6 @@
   line-height: 42px;
 }
 
-  
 .portfolio-header .mdl-layout__drawer-button {
   background-color: rgba(197, 197, 197, 0.44);
 }
@@ -132,7 +131,6 @@ img.article-image {
   float: right;
   top: -4px;
 }
-
 
 .portfolio-contact .mdl-textfield {
   width: 100%;
@@ -242,6 +240,21 @@ img.article-image {
   align-items: center;
 }
 
+.el-blog {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.el-blog p {
+  font-size: 16px;
+}
+
+.el-blog h5, h6, p {
+    font-weight: 400;
+}
+
+.el-blog h1, h2, h3, h4 {
+  font-weight: 300;
+}
 
 
 .el-blog .mdl-card__media {
@@ -373,5 +386,4 @@ img.article-image {
   position: -webkit-sticky;
   position: sticky;
   top: 100px;
-
 }

@@ -154,15 +154,15 @@
 }
 
 .rw-card__title {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 28px;
+    font-weight: 300;
     line-height: 1.3333;
     margin-bottom: 16px
 }
 
 .rw-card__title a {
-    font-size: 18px;
-    font-weight: 500
+    font-size: 28px;
+    font-weight: 300
 }
 
 .rw-card--media-full .rw-card__body a, .rw-card--media-full .rw-card__title a {
@@ -184,8 +184,8 @@
 }
 
 .rw-card__body, .rw-card__body a {
-    font-size: 14px;
-    font-weight: 300
+    font-size: 16px;
+    font-weight: 400
 }
 
 .rw-card__body a, .rw-card__title a {
