@@ -94,7 +94,7 @@
 
     <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect el-menu" style="min-width: {{ 900 // (pages|length() + 4) }}px;" for="cat-menu">
       {% for cat, null in categories %}
-      <li class="mdl-menu__item el-menu-li"><a class="el-menu-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+      <a class="el-menu-link" href="{{ SITEURL }}/{{ cat.url }}"><li class="mdl-menu__item el-menu-li">{{ cat }}</li></a>
       {% endfor %}
     </ul>
 

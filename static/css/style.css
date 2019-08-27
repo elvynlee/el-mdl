@@ -387,3 +387,20 @@ img.article-image {
   position: sticky;
   top: 100px;
 }
+
+.el-page {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.el-page p {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.el-page h5, h6, p {
+    font-weight: 300;
+}
+
+.el-page h1, h2, h3, h4 {
+  font-weight: 300;
+}
