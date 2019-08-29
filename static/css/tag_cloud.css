@@ -40,8 +40,7 @@
 	opacity: 0;
 }
 .tagcloud ul li a:hover {
-	border: 1px solid #3498db;
-	color: #3498db;
+	border: 1px solid rgb(96, 125, 139);
 }
 .tagcloud ul li:hover span.mdl-badge {
 	opacity: 1;
@@ -53,35 +52,35 @@
 	height: 36px;
 	line-height: 36px;
 	font-size: 24px;
-	color: #000;
+	color: rgb(45, 62, 70);
 }
 .tagcloud ul li a.tag-1 {
     max-width: 90px;
 	height: 32px;
 	line-height: 32px;
 	font-size: 20px;
-	color: #444;
+	color: rgb(69, 90, 100);
 }
 .tagcloud ul li a.tag-2 {
     max-width: 80px;
 	height: 28px;
 	line-height: 28px;
 	font-size: 16px;
-	color: #777;
+	color: rgb(96, 125, 139);
 }
 .tagcloud ul li a.tag-3 {
     max-width: 80px;
 	height: 24px;
 	line-height: 24px;
 	font-size: 12px;
-	color: #aaa;
+	color: rgb(96, 125, 139, .75);
 }
 .tagcloud ul li a.tag-4 {
     max-width: 80px;
 	height: 24px;
 	line-height: 24px;
 	font-size: 12px;
-	color: #aaa;
+	color: rgb(96, 125, 139, .75);
 }
 .tagcloud ul li span.tag-0 {
 	height: 36px;

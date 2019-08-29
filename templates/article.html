@@ -22,25 +22,25 @@
 
 {% block content %}
 <div class="el-article-path">
-  <button class="mdl-button mdl-js-button mdl-button--accent">
-    <a style="text-decoration: none;" href="/index.html" title="首页"><i class="material-icons">home</i></a>
-  </button>
-  <button class="mdl-button mdl-js-button mdl-button--accent" disabled>
+  <a style="text-decoration: none;" href="/index.html" title="首页"><button class="mdl-button mdl-js-button mdl-button--primary">
+    <i class="material-icons">home</i>
+  </button></a>
+  <button class="mdl-button mdl-js-button mdl-button--primary" disabled>
     / 
   </button>
 
   {% if article.category %}
-  <button class="mdl-button mdl-js-button mdl-button--accent">
-    <a style="text-decoration: none;" href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category }}分类页">{{ article.category }}</a>
-  </button>
+  <a style="text-decoration: none;" href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category }}分类页"><button class="mdl-button mdl-js-button mdl-button--primary">
+    {{ article.category }}
+  </button></a>
   {% endif %}
   
-  <button class="mdl-button mdl-js-button mdl-button--accent" disabled>
+  <button class="mdl-button mdl-js-button mdl-button--primary" disabled>
     / {{ article.title }}
   </button>
 </div>
 
-<div class="el-blog mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+<div class="el-blog mdl-cell mdl-cell--12-col mdl-card">
 
     <div class="mdl-card__media mdl-color-text--grey-50" style="{% if article.color %}background-color: {{article.color}};{% endif %} {% if article.image %}background-image: url({{article.image}});{% endif %}">
         <h4>{{ article.title }}</h4>
@@ -50,8 +50,8 @@
         <div>
             {% if article.modified %}
             <button class="mdl-button mdl-js-button" disabled style="min-width: 90;line-height: 1em">
-                <div style="font-size: 0.5em">发布：{{ article.locale_date }}</div>
-                <div style="font-size: 0.5em">更改：{{ article.locale_modified }}</div>
+                <div style="font-size: 0.5em">发布:{{ article.locale_date }}</div>
+                <div style="font-size: 0.5em">更改:{{ article.locale_modified }}</div>
             </button>
             {% else %}
             <button class="mdl-button mdl-js-button" disabled style="min-width: 90;">
@@ -60,22 +60,22 @@
             {% endif %}
         </div>
 
-        <div>
+        <div class="el-tag-btn">分类:
             {% if article.category %}
-            <button class="mdl-button mdl-js-button mdl-button--accent">
-              <a style="text-decoration: none;" href="{{ SITEURL }}/{{ article.category.url }}"><i class="material-icons">notes</i>分类：{{ article.category }}</a>
-            </button>
+            <a style="text-decoration: none;" href="{{ SITEURL }}/{{ article.category.url }}"><button class="mdl-button mdl-js-button mdl-button--primary">
+              {{ article.category }}
+            </button></a>
             {% endif %}
         </div>
         
         <div class="section-spacer"></div>
 
         {% if article.tags %}
-        <div class="el-tag-btn"><i class="material-icons" style="font-size: 1.5em;vertical-align: middle;">local_offer</i>
+        <div class="el-tag-btn">标签:
             {% for tag in article.tags %}
-            <button class="mdl-button mdl-js-button mdl-button--accent">
-              <a style="text-decoration: none;" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-            </button>
+            <a style="text-decoration: none;" href="{{ SITEURL }}/{{ tag.url }}"><button class="mdl-button mdl-js-button mdl-button--primary">
+              {{ tag }}
+            </button></a>
             {% endfor %}
         </div>
         {% endif %}
@@ -89,13 +89,13 @@
 </div>
 <div class="mdl-card__supporting-text">
     {% if article.prev_article %}
-    <a style="float:left;" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ SITEURL }}/{{ article.prev_article.url}}" title="{{ article.prev_article.title }}">
+    <a style="float:left;" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--primary" href="{{ SITEURL }}/{{ article.prev_article.url}}" title="{{ article.prev_article.title }}">
       <i class="material-icons">arrow_back</i>{{ article.prev_article.title|truncate(40) }}
     </a>
     {% endif %}
     
     {% if article.next_article %}
-    <a style="float: right;" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ SITEURL }}/{{ article.next_article.url}}" title="{{ article.next_article.title }}">
+    <a style="float: right;" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--primary" href="{{ SITEURL }}/{{ article.next_article.url}}" title="{{ article.next_article.title }}">
       {{ article.next_article.title|truncate(40) }}...<i class="material-icons">arrow_forward</i>
     </a>
     {% endif %}

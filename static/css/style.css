@@ -43,7 +43,7 @@
 }
 
 .portfolio-navigation-row {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgb(69, 90, 100, .4);
   text-transform: uppercase;
   height: 45px;
 }
@@ -342,6 +342,10 @@ img.article-image {
   line-height: 1em;
 }
 
+.el-tag-btn .mdl-button:hover {
+  background-color: transparent;
+}
+
 .el-nav .pagination_container {
   display: block;
   text-align: center;
@@ -374,6 +378,9 @@ img.article-image {
   line-height: 1em;
   vertical-align: middle;
 }
+.el-article-path .mdl-button:hover {
+  background-color: transparent; 
+}
 
 .el-tagcloud .mdl-card__supporting-text {
   padding: 6px;
@@ -385,7 +392,7 @@ img.article-image {
 .el-search {
   position: -webkit-sticky;
   position: sticky;
-  top: 100px;
+  top: 75px;
 }
 
 .el-page {
