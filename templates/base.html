@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/material.blue_grey-red.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygment.css">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/tag_cloud.css">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/article_card.css">
@@ -156,8 +157,14 @@
                     {% if WECHAT_URL %} <li class="el-social-btn"><i class="ello-icon"><a href="{{ WECHAT_URL }}" title="wechat">&#xf1d7;</a></i></li> {% endif %}
                     {% if LINKEDIN_URL %} <li class="el-social-btn"><i class="ello-icon"><a href="{{ LINKEDIN_URL }}" title="linkedin">&#xf30c;</a></i></li> {% endif %}
                   </ul>
-              <div style="font-size: 0.5em;">powered by <a href="http://getpelican.com/" style="text-decoration: none;color: #ccc;">Pelican</a>,
-                based on <a href="http://python.org" style="text-decoration: none;color: #ccc;">Python</a>.</div>
+              <div style="font-size: 0.5em;">
+                © 2019 elvyn. <br />powered by 
+                <a href="http://getpelican.com/" style="text-decoration: none;color: #ccc;">Pelican</a>
+                , based on 
+                <a href="http://python.org" style="text-decoration: none;color: #ccc;">Python</a>
+                and 
+                <a href="https://getmdl.io" style="text-decoration: none;color: #ccc;">mdl</a>
+              </div>
             </div>
             <div class="mdl-mini-footer--middle-section">
               
@@ -186,5 +193,7 @@
   {% endblock script %}
   {% block extra_js %}
   {% endblock %}
+
+  {% include 'analytics.html' %}
 </body>
 </html>

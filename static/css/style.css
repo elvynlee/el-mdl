@@ -392,7 +392,13 @@ img.article-image {
 .el-search {
   position: -webkit-sticky;
   position: sticky;
-  top: 75px;
+  top: 0px;
+}
+
+.el-toc {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 130px;
 }
 
 .el-page {
@@ -421,7 +427,6 @@ img.article-image {
   font-size: 16px;
   font-weight: 400;
 	position: relative;
-	display: inline-block;
 	margin: 0 0 .5em 0;
 	padding: 0;
 	vertical-align: middle;
