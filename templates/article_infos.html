@@ -1,7 +1,7 @@
 <div class="mdl-cell mdl-cell--12-col">
 <div class="rw-card rw-card--media mdl-card mdl-shadow--4dp">
 
-    <div class="rw-card__img-container bg-img-clickable" alt="{{ article.title }}" {% if article.image %}style="background-image: url({{ article.image }});"{% elif article.color %}style="background-color: {{article.color}};"{% endif %}></div>
+    <div class="rw-card__img-container bg-img-clickable" alt="{{ article.title }}" style="{% if article.image %}background-image: url({{ article.image }});{% endif %}{% if article.color %}background-color: {{article.color}};{% endif %}"></div>
 
     <div class="rw-card__content">
 

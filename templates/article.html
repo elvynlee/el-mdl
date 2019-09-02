@@ -42,7 +42,7 @@
 
 <div class="el-blog mdl-cell mdl-cell--12-col mdl-card">
 
-    <div class="mdl-card__media mdl-color-text--grey-50" {% if article.image %}style="background-image: url({{ article.image }});"{% elif article.color %}style="background-color: {{article.color}};"{% endif %}>
+    <div class="mdl-card__media mdl-color-text--grey-50" style="{% if article.image %}background-image: url({{ article.image }});{% endif %}{% if article.color %}background-color: {{article.color}};{% endif %}">
         <h4>{{ article.title }}</h4>
     </div>
 
