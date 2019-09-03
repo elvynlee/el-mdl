@@ -11,6 +11,8 @@
 {% endblock content %}
 
 {% block sidebar_head %}
+
+{% if recommended_posts %}
 <div class="mdl-card mdl-cell mdl-cell--12-col">
     <div class="mdl-card__title mdl-card--border">
         <h2 class="mdl-card__title-text">随便看看</h2>
@@ -23,4 +25,6 @@
         </ul>
     </div>
 </div>
+{% endif %}
+
 {% endblock %}
