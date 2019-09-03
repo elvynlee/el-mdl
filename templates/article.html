@@ -154,6 +154,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
+  id: '{{ article.locale_date }}-{{ article.slug }}',
   owner: '{{ GITMENT_GITHUB_ID }}',
   repo: '{{ REPO_TO_STORE_COMMENTS }}',
   oauth: {
