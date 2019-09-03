@@ -446,3 +446,7 @@ img.article-image {
   color: rgb(255, 82, 82);
   text-decoration-line: underline;
 }
+
+.el-comments {
+  background-color: #eee;
+}

@@ -18,6 +18,10 @@
     <meta name="tags" content="{{tag}}" />
   {% endfor %}
 
+  {% block extra_css %}
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  {% endblock %}
+
 {% endblock %}
 
 {% block content %}
@@ -85,8 +89,13 @@
         {{ article.content }}
     </div>
     
-
 </div>
+
+{% if GITMENT_GITHUB_ID %}
+<div id="container" class="mdl-color-text--primary-contrast mdl-card__supporting-text el-comments">
+</div>
+{% endif %}
+
 <div class="mdl-card__supporting-text">
     {% if article.prev_article %}
     <a style="float:left;" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--primary" href="{{ SITEURL }}/{{ article.prev_article.url}}" title="{{ article.prev_article.title }}">
@@ -139,4 +148,19 @@
   </div>
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '{{ GITMENT_GITHUB_ID }}',
+  repo: '{{ REPO_TO_STORE_COMMENTS }}',
+  oauth: {
+    client_id: '{{ OAUTH_CLIENT_ID }}',
+    client_secret: '{{ OAUTH_CLIENT_SECRET }}',
+  },
+})
+gitment.render('container')
+</script>
 {% endblock %}
