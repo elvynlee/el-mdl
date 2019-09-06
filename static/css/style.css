@@ -450,3 +450,7 @@ img.article-image {
 .el-comments {
   background-color: #eee;
 }
+
+.page-footer button#el-icon-upward {
+  bottom: 80px;
+}
