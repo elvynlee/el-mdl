@@ -45,13 +45,13 @@
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     
-    <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
-      <div class="mdl-layout__header-row portfolio-logo-row">
+    <header class="mdl-layout__header mdl-layout__header--waterfall el-mdl-header">
+      <div class="mdl-layout__header-row el-mdl-logo-row">
         <span class="mdl-layout__title">
-          <div class="portfolio-logo" style="opacity: 0.2"></div>
+          <div class="el-mdl-logo" style="opacity: 0.2"></div>
         </span>
       </div>
-      <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+      <div class="mdl-layout__header-row el-mdl-navigation-row mdl-layout--large-screen-only">
         <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
 
           <a {% if output_file == "index.html" %} class="mdl-navigation__link is-active" {% else %} class="mdl-navigation__link" {% endif %} href="/index.html">首页</a>
@@ -102,7 +102,7 @@
     <main class="mdl-layout__content" style="display: flex;flex-direction: column;">
       <a name="top"></a>
       <div style="flex:1">
-        <div class="mdl-grid portfolio-max-width">
+        <div class="mdl-grid el-mdl-max-width">
           <div class="mdl-card mdl-cell mdl-cell--9-col">
           {% block content %}
           {% endblock %}
