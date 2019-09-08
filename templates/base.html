@@ -60,14 +60,19 @@
           <div class="mdl-layout-spacer"></div>
 
           {% if TIPUE_SEARCH %}
-          <form class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
-              <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" id="search-field">
-            </div>
-          </form>
+          <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+            <form class="" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> 
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="tipue_search_input">
+                  <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                  <input class="mdl-textfield__input" type="text" name="q" id="tipue_search_input">
+                  <label class="mdl-textfield__label" for="tipue_search_input">Enter your query...</label>
+                </div>
+              </div>
+            </form>
+          </div>
           {% endif %}
 
           <div class="android-navigation-container mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
@@ -81,10 +86,30 @@
             </nav>
           </div>
 
+          <span class="android-mobile-title mdl-layout-title">
+            {% if SITELOGO %}
+            <img class="android-logo-image" src="{{ SITEURL }}/{{ SITELOGO }}">
+            {% endif %}
+            <span class="el-mdl-site-name el-mdl-logo-text">{{ SITENAME }}</span>
+          </span>
+
+          <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+              <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+              {% if DISPLAY_PAGES_ON_MENU %}
+              {% for pg in pages %}
+              <a href="{{ SITEURL }}/{{ pg.url }}"><li class="mdl-menu__item">{{ pg.title }}</li></a>
+              {% endfor %}
+              {% endif %}
+              <a href="/tags.html"><li class="mdl-menu__item">TAG页面</li></a>
+              <a href="/archives.html"><li class="mdl-menu__item">文章存档</li></a>
+            </ul>
+
       </div>
     </header>
 
-    <div class="android-drawer mdl-layout__drawer">
+    <div class="android-drawer mdl-layout__drawer mdl-layout--small-screen-only">
       <span class="mdl-layout-title">
         {% if SITELOGO_WHITE %}
         <img class="android-logo-image" src="{{ SITEURL }}/{{ SITELOGO_WHITE }}">
@@ -93,7 +118,7 @@
       </span>
 
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="{{ SITEURL }}">首页</a>
+        <a class="mdl-navigation__link" href="{{ SITEURL }}/">首页</a>
         {% for cat, null in categories %}
         <a class="mdl-navigation__link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
         {% endfor %}

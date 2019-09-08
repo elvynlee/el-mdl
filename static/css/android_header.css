@@ -143,8 +143,8 @@ a img{
 
   .android-drawer .mdl-layout-title {
     position: relative;
-    background: #6ab344;
-    height: 160px;
+    background: rgb(96, 125, 139);
+    height: 120px;
   }
 
     .android-drawer .android-logo-image {
@@ -243,10 +243,16 @@ a img{
   position: absolute;
   background: rgb(161, 183, 194);
 }
+
 .mdl-tabs .mdl-tabs__tab:hover:after {
   display: block;
 }
+
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:hover:after {
   background: rgb(161, 183, 194);
   transition: all .1s;
+}
+
+.mdl-menu__container a {
+  text-decoration: none;
 }
