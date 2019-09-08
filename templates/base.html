@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/tag_cloud.css">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/article_card.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/android_header.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/auto_hide_nav.css">
     {% block extra_css %}
     {% endblock %}
   {% endblock head %}
@@ -76,20 +78,25 @@
       </div>
     </header>
 
-    <div class="mdl-layout__drawer mdl-layout--small-screen-only">
-      <span class="mdl-layout__title"><a href="{{ SITEURL }}/">{{ SITENAME }}</a></span>
-      <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-        {% if DISPLAY_PAGES_ON_MENU %}
-          {% for p in pages %}
-            <a class="mdl-navigation__link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
-          {% endfor %}
+    <div class="android-drawer mdl-layout__drawer">
+      <span class="mdl-layout-title">
+        {% if SITELOGO_WHITE %}
+        <img class="android-logo-image" src="{{ SITEURL }}/{{ SITELOGO_WHITE }}">
+        <span class="el-mdl-site-name el-mdl-logo-text-white">{{ SITENAME }}</span>
         {% endif %}
+      </span>
 
-        {% if DISPLAY_CATEGORIES_ON_MENU %}
-          {% for cat, null in categories %}
-            <a class="mdl-navigation__link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
-          {% endfor %}
-        {% endif %}
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="{{ SITEURL }}">首页</a>
+        {% for cat, null in categories %}
+        <a class="mdl-navigation__link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+        {% endfor %}
+        <div class="android-drawer-separator"></div>
+        {% for pg in pages %}
+        <a class="mdl-navigation__link" href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a>
+        {% endfor %}
+        <a class="mdl-navigation__link" href="/tags.html">TAG页面</a>
+        <a class="mdl-navigation__link" href="/archives.html">文章存档</a>
       </nav>
     </div>
 
@@ -188,6 +195,7 @@
   </div>
   {% block script %}
   <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery-3.0.0.min.js"></script>
+  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/auto_hide_nav.js"></script>
   <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/material.min.js"></script>
   <script>
     function validateForm(query)
