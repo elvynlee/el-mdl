@@ -288,7 +288,7 @@ img.article-image {
 .el-toc {
   position: -webkit-sticky;
   position: sticky;
-  top: 130px;
+  top: 80px;
 }
 
 .el-page {
@@ -350,4 +350,14 @@ img.article-image {
 
 .el-mdl .mdl-card {
   background-color: #f9f9f9;
+}
+
+.el-mdl .mdl-layout {
+  overflow-y: visible;
+  overflow-x: visible;
+}
+
+.el-mdl .mdl-layout main.mdl-layout__content {
+  overflow-y: visible;
+  overflow-x: visible;
 }
