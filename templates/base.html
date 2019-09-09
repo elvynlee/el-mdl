@@ -77,10 +77,10 @@
 
           <div class="android-navigation-container mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
             <nav class="android-navigation mdl-navigation mdl-tabs__tab-bar">
-              <a class="mdl-navigation__link mdl-tabs__tab {% if output_file == 'index.html' %}is-active{% endif %}" href="/index.html">首页</a>
+              <a class="mdl-navigation__link mdl-tabs__tab mdl-typography--body-1-force-preferred-font {% if output_file == 'index.html' %}is-active{% endif %}" href="/index.html">首页</a>
               {% if DISPLAY_CATEGORIES_ON_MENU %}
               {% for cat, null in categories %}
-              <a class="mdl-navigation__link mdl-tabs__tab {% if cat == category %}is-active{% endif %}" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+              <a class="mdl-navigation__link mdl-tabs__tab mdl-typography--body-1-force-preferred-font {% if cat == category %}is-active{% endif %}" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
               {% endfor %}
               {% endif %}
             </nav>

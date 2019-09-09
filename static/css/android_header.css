@@ -49,8 +49,8 @@ a img{
 
 
 .android-logo-image {
-  height: 28px;
-  width: 140px;
+  height: 56px;
+  width: 165px;
 }
 
 
@@ -60,18 +60,22 @@ a img{
 }
 
   .android-header .material-icons {
-    color: #767777 !important;
+    color: #777 !important;
   }
 
   .android-header .mdl-layout__drawer-button {
     background: transparent;
-    color: #767777;
+    color: #777;
   }
 
   .android-header .mdl-navigation__link {
-    color: #757575;
+    color: rgb(120, 147, 161);
     font-weight: 700;
     font-size: 14px;
+  }
+
+  .android-header .mdl-navigation__link:hover {
+    color: rgb(96, 125, 139);
   }
 
   .android-navigation-container {
@@ -172,7 +176,7 @@ a img{
     display: block !important;
     position: absolute;
     left: calc(50% - 70px);
-    top: 18px;
+    top: 2px;
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -255,4 +259,8 @@ a img{
 
 .mdl-menu__container a {
   text-decoration: none;
+}
+
+.mdl-layout__header-row .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active {
+  color: rgba(69, 90, 100);
 }
