@@ -131,10 +131,11 @@
       </nav>
     </div>
 
-
-
+    <a name="top"></a>
+    {% if SITELOGO_WHITE %}
+    <div class="el-mdl-bg-image" style="background-image: url({{ SITEURL }}/{{ BG_IMG }})"></div>
+    {% endif %}
     <main class="mdl-layout__content" style="display: flex;flex-direction: column;">
-      <a name="top"></a>
       <div style="flex:1">
         <div class="mdl-grid el-mdl-max-width">
           <div class="mdl-card mdl-cell mdl-cell--9-col">
