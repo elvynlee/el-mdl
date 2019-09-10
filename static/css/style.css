@@ -132,6 +132,7 @@ img.article-image {
 .el-blog p {
   font-size: 17px;
 }
+
 .el-blog ul, ol {
   font-size: 16px;
 }
@@ -145,6 +146,7 @@ img.article-image {
   max-width: 100%;
   border: solid 1px #ddd;
   font-size: 80%;
+  margin: 0 4px;
 }
 
 .el-blog a {
@@ -314,7 +316,41 @@ img.article-image {
   position: sticky;
   top: 80px;
 }
-
+.el-toc div#toc ul {
+	margin-top: 10px;
+	padding: 0;
+	list-style: none;
+}
+.el-toc div#toc ul li {
+  font-size: 16px;
+  font-weight: 400;
+	position: relative;
+	margin: 0 0 .5em 0;
+	padding: 0;
+	vertical-align: middle;
+}
+.el-toc div#toc ul li a {
+	position: relative;
+  display: inline-block;
+  color: rgb(69, 90, 100);
+  text-decoration: none;
+}
+.el-toc div#toc ul li a:hover {
+  color: rgb(255, 82, 82);
+  text-decoration-line: underline;
+}
+.el-toc div#toc ul ul {
+	margin-left: 10px;
+}
+.el-toc div#toc ul ul li a {
+  color: rgb(96, 125, 139);
+}
+.el-toc div#toc ul ul ul {
+	margin-left: 10px;
+}
+.el-toc div#toc ul ul ul li a {
+  color: rgba(96, 125, 139, .75);
+}
 .el-page {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
