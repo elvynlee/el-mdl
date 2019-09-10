@@ -1,7 +1,7 @@
 .highlight .hll { background-color: #ffffcc }
-.highlight  { background: rgb(96, 125, 139, .15); }
+.highlight  { background: #f0f0f0;margin: 0 0 16px;border: 1px solid #ddd; }
 .highlight .c { color: #008000 } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
+/*.highlight .err { border: 1px solid #FF0000 }  Error */
 .highlight .k { color: #0000ff } /* Keyword */
 .highlight .ch { color: #008000 } /* Comment.Hashbang */
 .highlight .cm { color: #008000 } /* Comment.Multiline */

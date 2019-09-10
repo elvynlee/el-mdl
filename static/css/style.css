@@ -130,7 +130,31 @@ img.article-image {
 }
 
 .el-blog p {
+  font-size: 17px;
+}
+.el-blog ol {
   font-size: 16px;
+}
+
+.el-blog code {
+  color: rgb(255, 82, 82);
+  background-color: #fff;
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",Courier,monospace;
+  padding: 2px 5px;
+  white-space: nowrap;
+  max-width: 100%;
+  border: solid 1px #ddd;
+  font-size: 80%;
+}
+
+.el-blog a {
+  color: inherit;
+}
+
+.el-blog div.highlight pre {
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",Courier,monospace;
+  padding: 12px 12px;
+  margin: 0;
 }
 
 .el-blog h5, h6, p {
