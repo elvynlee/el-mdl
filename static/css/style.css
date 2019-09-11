@@ -442,3 +442,11 @@ img.article-image {
   background-position: 50% 50%;
   margin-top: 64px;
 }
+
+.el-tag {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.el-tag .mdl-grid {
+  margin: 0;
+}

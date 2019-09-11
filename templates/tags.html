@@ -3,34 +3,35 @@
 {% block title %}{{ SITENAME }} - Tag列表{% endblock %}
 
 {% block content %}
-<div class="el-blog mdl-cell mdl-cell--12-col mdl-card">
+<div class="el-tag mdl-cell mdl-cell--12-col mdl-card">
 
-    <div class="mdl-card__media mdl-color-text--grey-50 el-crad">
-    </div>
-
-    <div class="mdl-color-text--grey-700 el mdl-card__supporting-text mdl-card--border">
+    <div class="mdl-color-text--grey-700 mdl-card__supporting-text mdl-card--border">
         <div>
-            <h4>{{ SITENAME }}Tag列表：</h4>
+            <h4>{{ SITENAME }} 网站Tag列表：</h4>
         </div>
     </div>
 
-    <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
-        <table class="mdl-data-table mdl-js-data-table">
-            <thead>
-                <tr>
-                <th class="mdl-data-table__cell--non-numeric">Tags标签</th>
-                <th>相关文章数</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for tag, articles in tags|sort %}
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric"><a href="{{ SITEURL }}/{{ tag.url }}" style="text-decoration: none;">{{ tag }}</a></td>
-                    <td>{{ articles|count }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div class="mdl-grid">
+        {% for i in range(3) %}
+        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-color-text--grey-700">
+            <table class="mdl-data-table mdl-js-data-table">
+                <thead>
+                    <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Tags标签</th>
+                    <th>相关文章数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for n in range(i, tags|count, 3) %}
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric"><a href="{{ SITEURL }}/{{ tags[n][0].url }}" style="text-decoration: none;">{{ tags[n][0] }}</a></td>
+                        <td>{{ tags[n][1]|count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
     </div>
 
 </div>
