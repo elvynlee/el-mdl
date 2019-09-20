@@ -158,6 +158,7 @@ var gitment = new Gitment({
   oauth: {
     client_id: '{{ OAUTH_CLIENT_ID }}',
     client_secret: '{{ OAUTH_CLIENT_SECRET }}',
+    redirect_uri: '{{ OAUTH_REDIRECT_URI }}',
   },
 })
 gitment.render('container')
