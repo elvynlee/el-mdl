@@ -19,7 +19,7 @@
   {% endfor %}
 
   {% block extra_css %}
-    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   {% endblock %}
 
 {% endblock %}
@@ -91,8 +91,8 @@
     
 </div>
 
-{% if GITMENT_GITHUB_ID %}
-<div id="container" class="mdl-color-text--primary-contrast mdl-card__supporting-text el-comments">
+{% if GITALK_GITHUB_ID %}
+<div id="gitalk-container" class="mdl-color-text--primary-contrast mdl-card__supporting-text el-comments">
 </div>
 {% endif %}
 
@@ -149,17 +149,17 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="https://billts.site/js/gitment.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <script>
-var gitment = new Gitment({
-  id: '{{ article.locale_date }}-{{ article.slug }}',
-  owner: '{{ GITMENT_GITHUB_ID }}',
+  var gitalk = new Gitalk({
+  clientID: '{{ OAUTH_CLIENT_ID }}',
+  clientSecret: '{{ OAUTH_CLIENT_SECRET }}',
   repo: '{{ REPO_TO_STORE_COMMENTS }}',
-  oauth: {
-    client_id: '{{ OAUTH_CLIENT_ID }}',
-    client_secret: '{{ OAUTH_CLIENT_SECRET }}',
-  },
-})
-gitment.render('container')
+  owner: '{{ GITALK_GITHUB_ID }}',
+  admin: ['{{ GITALK_GITHUB_ID }}',],
+  id: '{{ article.locale_date }}-{{ article.slug }}',
+  distractionFreeMode: false,
+  })
+  gitalk.render('gitalk-container')
 </script>
 {% endblock %}
